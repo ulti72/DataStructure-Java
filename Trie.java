@@ -1,4 +1,8 @@
+//Trie is an efficient information reTrieval data structure
+//Trie supports search, insert and delete operations in O(L) time where L is length of key
 import java.util.*;
+
+//Node of our trie/
 class TrieNode{
     boolean endOfWord ;
     Map<Character,TrieNode> children ;
@@ -7,10 +11,13 @@ class TrieNode{
         children = new HashMap<>();
     }
 }
+//Trie
 class TrieObj{
     TrieNode root=new  TrieNode();
-    //Time complexity O(m) and space complexity O(m) where m is key length
+    //for searching:
     char[] letters ={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+
+    //inserting into trie
     public void insert(String word){
         TrieNode  current = root ;
         for(int i =0 ;i < word.length(); i++){
@@ -25,6 +32,8 @@ class TrieObj{
         current.endOfWord = true ;
     }
 
+
+//seraching in trie for a particular string
     public boolean search(String word){
 
         TrieNode current = root ;
@@ -41,6 +50,8 @@ class TrieObj{
 
 
     }
+
+    //counting number of words start with given letters
     public int prefixCount(String word){
         int count =0;
         TrieNode current = root ;
@@ -54,6 +65,8 @@ class TrieObj{
         count = wordCount(current);
         return count ;
     }
+
+    //counting number of words, from the given node
     public int wordCount(TrieNode current){
         int count=0;
         if(current.endOfWord==true||current==null)
