@@ -11,7 +11,6 @@ public class DFS{
       }
      return n ;
     }
-
     public static void addEdge(int u, int v){
         ar[u][v]=1;
         ar[v][u]=1;
@@ -56,6 +55,7 @@ public class DFS{
            addEdge(6,7);
             addEdge(7,8);
              addEdge(7,9);
+             addEdge(10,8);
 
      int start = 3 ;
      int goal = 10 ;
