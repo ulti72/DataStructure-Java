@@ -2,18 +2,12 @@
 //
 import java.util.*;
 
-//Object  end vertex and weight of an edge
-
-//End of Edge class
-//Weighed Graph Class
-public class GraphWei{
-
-     class Edge{
+//Object  end vertex and weight of an edge.
+    class Edge{
 
         int to ;
         int weight;
         public  Edge(int to , int weight){
-            super();
             this.to = to ;
             this.weight= weight ;
         }
@@ -22,6 +16,9 @@ public class GraphWei{
             return (to+" W("+weight+")");
         }
     }
+//End of Edge class
+//Weighed Graph Class
+public class GraphWei{
 
 //Adjency list for graph
    public static HashMap<Integer,List<Edge>> adj ;
